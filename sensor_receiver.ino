@@ -11,7 +11,7 @@ SoftwareSerial rxSerial(7, 8); // RX, TX
 void setup()
 {
   delay(1000);
-  pinMode(6, OUTPUT);
+  // pinMode(6, OUTPUT);
   rxSerial.begin(4800);
   vw_set_rx_pin(4); //Pin fuer Empfang durch Funkmodul
   vw_setup(2000); // bps
@@ -22,13 +22,13 @@ void loop()
 {
   if (vw_get_message(message, &messageLength)) // non-blocking
   {
-    digitalWrite(6, HIGH);
+    // digitalWrite(6, HIGH);
     
     for (int i = 0; i < messageLength; i++)
     {
       rxSerial.write(message[i]);
     }
     rxSerial.println();
-    digitalWrite(6, LOW);
+    // digitalWrite(6, LOW);
   }
 }
