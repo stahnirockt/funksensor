@@ -69,7 +69,7 @@ void sendData(int id, int temp, int hum, bool wait){
   String message = String(id);
   
   //Message zusammenstellen
-  message += "-" + tempString + "-" + humString;
+  message += "&" + tempString + "&" + humString;
   
   //Message versenden
   byte messageLength = message.length() + 1; 
